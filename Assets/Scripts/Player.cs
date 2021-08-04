@@ -9,6 +9,18 @@ public class Player : MonoBehaviour
     public float velocity;
     public float rotationVelocity;
 
+    public void StartGame()
+    {
+        distanceTraveled = 0f;
+        avatarRotation = 0f;
+        systemRotation = 0f;
+        worldRotation = 0f;
+
+        currentPipe = pipeSystem.SetupFirstPipe();
+        SetupCurrentPipe();
+        gameObject.SetActive(true);
+    }
+
     private Pipe currentPipe;
     private float distanceTraveled;
     private float deltaToRotation;
@@ -18,11 +30,17 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        world = pipeSystem.transform.parent;
         currentPipe = pipeSystem.SetupFirstPipe();
-        rotater = transform.GetChild(0);
         deltaToRotation = 360f / (2f * Mathf.PI * currentPipe.CurveRadius);
         SetupCurrentPipe();
+    }
+
+
+    private void Awake()
+    {
+        world = pipeSystem.transform.parent;
+        rotater = transform.GetChild(0);
+        gameObject.SetActive(false);
     }
 
     public void Die()
