@@ -10,6 +10,6 @@ public class HUD : MonoBehaviour
     public void setValues(float distanceTraveled, float velocity)
     {
         scoreLabel.text = ((int)(distanceTraveled * 10f)).ToString();
-        velocityLabel.text = ((int)(velocity * 10f)).ToString();
+        velocityLabel.text = ((int) velocity).ToString();
     }
 }
