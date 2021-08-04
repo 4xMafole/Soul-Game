@@ -8,18 +8,7 @@ public class Player : MonoBehaviour
     public PipeSystem pipeSystem;
     public float velocity;
     public float rotationVelocity;
-
-    public void StartGame()
-    {
-        distanceTraveled = 0f;
-        avatarRotation = 0f;
-        systemRotation = 0f;
-        worldRotation = 0f;
-
-        currentPipe = pipeSystem.SetupFirstPipe();
-        SetupCurrentPipe();
-        gameObject.SetActive(true);
-    }
+    public MainMenu mainMenu;
 
     private Pipe currentPipe;
     private float distanceTraveled;
@@ -45,7 +34,20 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        mainMenu.EndGame(distanceTraveled);
         gameObject.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        distanceTraveled = 0f;
+        avatarRotation = 0f;
+        systemRotation = 0f;
+        worldRotation = 0f;
+
+        currentPipe = pipeSystem.SetupFirstPipe();
+        SetupCurrentPipe();
+        gameObject.SetActive(true);
     }
 
     private void Update()
