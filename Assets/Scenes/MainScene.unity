@@ -10130,6 +10130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 7415662593160271299, guid: 4e8efcf64940f50469c8de990c05f890, type: 3}
   pipeCount: 4
+  emptyPipeCount: 2
 --- !u!4 &2103649630
 Transform:
   m_ObjectHideFlags: 0
