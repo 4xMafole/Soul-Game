@@ -79,7 +79,27 @@ public class Player : MonoBehaviour
 
     private void UpdateAvatarRotation()
     {
-        avatarRotation += rotationVelocity * Time.deltaTime * Input.GetAxis("Horizontal");
+        float rotationInput = 0f;
+
+        if(Application.isMobilePlatform)
+        {
+            if(Input.touchCount == 1)
+            {
+                if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
+                {
+                    rotationInput = -1f;
+                }
+                else
+                {
+                    rotationInput = 1f;
+                }
+            }
+        }
+        else
+        {
+            rotationInput = Input.GetAxis("Horizontal");
+        }
+        avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
 
         if(avatarRotation < 0f)
         {
