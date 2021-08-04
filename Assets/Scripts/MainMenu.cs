@@ -9,9 +9,9 @@ public class MainMenu : MonoBehaviour
     public Player player;
     public Text scoreLabel;
 
-    public void StartGame()
+    public void StartGame(int mode)
     {
-        player.StartGame();
+        player.StartGame(mode);
         gameObject.SetActive(false);
     }
 
