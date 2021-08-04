@@ -162,6 +162,7 @@ MonoBehaviour:
   - 0.1
   acceleration: 0
   mainMenu: {fileID: 2020452885}
+  hud: {fileID: 766835339}
 --- !u!4 &160397975
 Transform:
   m_ObjectHideFlags: 0
@@ -5341,6 +5342,7 @@ GameObject:
   - component: {fileID: 766835338}
   - component: {fileID: 766835337}
   - component: {fileID: 766835336}
+  - component: {fileID: 766835339}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -5430,6 +5432,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
+--- !u!114 &766835339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766835334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5819e715546341a76a42ff16c80bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreLabel: {fileID: 938342559}
+  velocityLabel: {fileID: 1353073404}
 --- !u!1 &938342557
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float[] accelerations;
     public float acceleration;
     public MainMenu mainMenu;
+    public HUD hud;
 
     private Pipe currentPipe;
     private float distanceTraveled;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
         systemRotation = 0f;
         worldRotation = 0f;
 
+        hud.setValues(distanceTraveled, velocity);
         acceleration = accelerations[accelerationMode];
         velocity = startVelocity;
         currentPipe = pipeSystem.SetupFirstPipe();
@@ -72,6 +74,7 @@ public class Player : MonoBehaviour
         }
         pipeSystem.transform.localRotation = Quaternion.Euler(0f, 0f, systemRotation);
         UpdateAvatarRotation();
+        hud.setValues(distanceTraveled, velocity);
     }
 
     private void UpdateAvatarRotation()
